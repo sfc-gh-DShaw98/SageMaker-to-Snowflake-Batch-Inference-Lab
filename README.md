@@ -1,5 +1,5 @@
 **Migrate, Monitor, and Retrain SageMaker Models in Snowflake**
-![MLObservabilityWorkflow](images/MLObservabilityWorkflow.jpg)
+![MLObservabilityWorkflow](images/MLOpsHOLWorkflow.jpg)
 
 # Lab Overview
 In this hands-on lab, you'll take an XGBoost model trained in SageMaker and bring it into Snowflake. You'll use the Model Registry for governance, run batch inference via SQL, track model health with ML Observability, and perform retraining and promotion with warehouse compute.
