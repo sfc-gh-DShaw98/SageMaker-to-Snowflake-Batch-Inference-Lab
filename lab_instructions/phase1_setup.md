@@ -75,7 +75,7 @@ DESC USER mlops_user;
 1. Use AICOLLEGE Role
 2. Navigate to Data >> Databases >> AICOLLEGE >> PUBLIC >> Stages >> SETUP
 3. Click + Files and choose these two files
-   - [Mortgage_Data.csv](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/data/Mortgage_Data.csv)and
+   - [Mortgage_Data.csv](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/data/Mortgage_Data.csv) and
    - [MLObservabilityWorkflow.jpg](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/images/MLObservabilityWorkflow.jpg) files
 4. Click Upload
 5. Return to your SQL Worksheet
@@ -198,14 +198,14 @@ This guide walks you through using a pre-provisioned for you in the [AWS SE-Sand
 ### 1.2.4 Upload Required Files
 1. In JupyterLab, click the upload icon in the left sidebar
 2. Upload the following files:
-    - connections.toml (update with your Snowflake credentials)
+    - [connections.toml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/connections.toml) (update with your Snowflake credentials)
     - rsa_private_key.pem (your private key file)
-    - College-of-AI-MLOPsExerciseNotebook.ipynb (provided notebook)
-    - Mortgage_Data.csv (if needed for local processing)
+    - [College-of-AI-MLOPsExerciseNotebook.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/College-of-AI-MLOPsExerciseNotebook.ipynb) (provided notebook)
+    - [Mortgage_Data.csv](https://drive.google.com/file/d/1fsL0y5HRNcswzgvTwgQJK9dfL6bCznGg/view?usp=sharing) (if needed for local processing)
 3. Verify the uploaded files appear in your JupyterLab file browser
 
 ### 1.2.5 Configure Snowflake Connection
-1. Open the connections.toml file in JupyterLab
+1. Open the [connections.toml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/connections.toml) file in JupyterLab
 2. Update the file with your Snowflake connection details:
 ```
 [connections.snowflake]
