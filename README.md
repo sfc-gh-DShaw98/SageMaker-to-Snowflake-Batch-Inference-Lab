@@ -44,6 +44,7 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 - **Data Files:**
   - Mortgage_Data.csv (for initial model training)
   - NewTrainingData.csv (for model retraining)
+    
 **Configuration Files:**
   - connections.toml (Snowflake connection config)
   - rsa_private_key.pem (for secure authentication)
