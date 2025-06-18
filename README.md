@@ -32,14 +32,14 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
   - Databases, schemas, warehouses, and stages
   - Service user (mlops_user) with key-pair authentication
   - Email notification integration
-  - [See detailed setup instructions](lab_instructions/phase1_setup.md)
+  - [See detailed setup instructions](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/phase1_setup.md)
     
 **AWS SageMaker:**
 - Access to SE-Sandbox or equivalent environment
 - JupyterLab space with SageMaker Distribution 2.4.2
 - **Important:** Always STOP your JupyterLab space when not actively working and DELETE it after completing the lab
-- [See detailed setup instructions](lab_instructions/phase1_setup.md)
-
+- [See detailed setup instructions](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/phase1_setup.md)
+  
 **Required Files**
 - **Data Files:**
   - [Mortgage_Data.csv](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/data/Mortgage_Data.csv) (for initial model training)
