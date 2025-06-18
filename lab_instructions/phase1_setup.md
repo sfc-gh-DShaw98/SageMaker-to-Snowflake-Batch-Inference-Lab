@@ -1,4 +1,4 @@
-# Phase 1: Model Development & SageMaker Integration
+# Phase 1: Model Development & SageMaker Integration - Setup
 
 This guide walks you through setting up your Snowflake environment and accessing AWS SageMaker for the first phase of the lab.
 
