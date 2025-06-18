@@ -48,6 +48,7 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 **Configuration Files:**
   - [connections.toml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/connections.toml) (Snowflake connection config)
   - rsa_private_key.pem (for secure authentication)
+  - [environment.yaml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/environment.yml) (for Phase 3 SPCS packages)
   - [College-of-AI-MLOPsExerciseNotebook.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/College-of-AI-MLOPsExerciseNotebook.ipynb) (SageMaker notebook)
   - [MLOPs Snowflake ML Observability In Action Exercise.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20Exercise.ipynb) (Snowflake notebook)
   - [MLOPs End-to-End Snowflake ML Retraining Exercise.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/MLOPs%20End-to-End%20Snowflake%20ML%20Retraining%20Exercise.ipynb) (Snowflake notebook)
