@@ -75,8 +75,8 @@ DESC USER mlops_user;
 1. Use AICOLLEGE Role
 2. Navigate to Data >> Databases >> AICOLLEGE >> PUBLIC >> Stages >> SETUP
 3. Click + Files and choose these two files
-   - Mortgage_Data.csv and
-   - MLObservabilityWorkflow.jpg files
+   - [Mortgage_Data.csv](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/data/Mortgage_Data.csv)and
+   - [MLObservabilityWorkflow.jpg](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/images/MLObservabilityWorkflow.jpg) files
 4. Click Upload
 5. Return to your SQL Worksheet
 6. Copy and run this code to create/load the required data 
@@ -193,6 +193,7 @@ This guide walks you through using a pre-provisioned for you in the [AWS SE-Sand
 7. Once the space is ready, click Open JupyterLab
    
 **IMPORTANT: Always STOP your JupyterLab space when not actively working and DELETE it after completing the lab to avoid unnecessary charges.**
+**CAUTION:** After stopping and restarting the space, SageMaker may default to the **latest image version (e.g. 3.0.0)**. Be sure to manually switch the image back to **SageMaker Distribution 2.4.2** before continuing. This ensures compatibility with the lab steps.
 
 ### 1.2.4 Upload Required Files
 1. In JupyterLab, click the upload icon in the left sidebar
