@@ -27,7 +27,7 @@ GRANT ROLE aicollege TO USER mlops_user;
 GRANT ROLE aicollege TO USER <your_standard_user>;
 
 -- Create database and warehouse
-CREATE OR REPLACE DATABASE aicollege;
+CREATE DATABASE IF NOT EXISTS aicollege;
 
 CREATE OR REPLACE WAREHOUSE aicollege
   WITH WAREHOUSE_SIZE = 'XSMALL'
