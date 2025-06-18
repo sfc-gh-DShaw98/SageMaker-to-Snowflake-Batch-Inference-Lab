@@ -1,0 +1,8 @@
+[connections.Snowpark_MLOps_HOL]
+account = "XXX"
+user = "mlops_user"
+role = "aicollege"
+warehouse = "aicollege"
+database = "aicollege"
+schema = "public"
+authenticator = "snowflake_jwt"
