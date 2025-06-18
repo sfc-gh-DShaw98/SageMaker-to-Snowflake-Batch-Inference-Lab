@@ -5,14 +5,14 @@ This guide walks you through training an XGBoost model in SageMaker and register
 ## 1.3 Model Development in SageMaker
 
 ### 1.3.1 Open the Notebook
-1. In your JupyterLab environment, open the College-of-AI-MLOPsExerciseNotebook.ipynb notebook
+1. In your JupyterLab environment, open the [College-of-AI-MLOPsExerciseNotebook.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/College-of-AI-MLOPsExerciseNotebook.ipynb) notebook
 2. Ensure you're using the Python 3 (ipykernel) kernel
 
 ### 1.3.2 Customize the Notebook
 1. Throughout the notebook, you'll find several placeholders marked XXX that need to be replaced:
 
 |**Cell Context**|**Replace `XXX` With**|
-|------------------|------------------------|
+|----------------|-----------------|
 |categorical_cols = ["LOAN_TYPE_NAME", "XXX", "XXX"]|"`LOAN_PURPOSE_NAME`" and "`COUNTY_NAME`"|
 |X = df_encoded.drop(columns=["XXX"]) and y = df_encoded.loc[X.index, "XXX"]|"`MORTGAGERESPONSE`"|
 |test_size=XXX|`0.2` for holdout and 0.25 for `0.25` for validation|
@@ -30,7 +30,7 @@ This guide walks you through training an XGBoost model in SageMaker and register
 |score_series = pd.Series(np.array(proba_predictions)[:, 1], name="XXX")|"`PREDICTED_SCORE`"|
 |save_as_table("XXX")|"`PREDICTIONS_WITH_GROUND_TRUTH`"|
 |raw_all_df["XXX"] = pd.Series(np.squeeze(predictions))|"`PREDICTED_RESPONSE`"|
-|raw_all_df["XXX"] = pd.Series(np.array(proba_predictions)|"`PREDICTED_SCORE`"|
+|raw_all_df["XXX"] = pd.Series(np.array(proba_predictions))|"`PREDICTED_SCORE`"|
 
 ### 1.3.3 Key Notebook Steps
 The notebook will guide you through:
@@ -61,7 +61,7 @@ As you run the notebook, you may see messages that look like errors:
 - TensorFlow CPU optimization notices
 These are normal SageMaker environment warnings and will not prevent you from completing the lab.
 
-## 1.4 Clean Up Your SageMaker Resources
+## 1.3.6 Clean Up Your SageMaker Resources
 Once you've completed the notebook:
 
 1. In the SageMaker Studio left sidebar, click Applications > JupyterLab
@@ -72,4 +72,4 @@ Once you've completed the notebook:
 6. Confirm the deletion when prompted
 
 ## Next Steps
-After completing this phase, proceed to [Phase 2: Model Monitoring with Snowflake ML Observability]() to set up monitoring for your registered model.
+After completing this phase, proceed to [**Phase 2: Model Monitoring with Snowflake ML Observability**]() to set up monitoring for your registered model.
