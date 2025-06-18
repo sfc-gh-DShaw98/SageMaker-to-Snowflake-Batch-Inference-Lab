@@ -193,6 +193,7 @@ This guide walks you through using a pre-provisioned for you in the [AWS SE-Sand
 7. Once the space is ready, click Open JupyterLab
    
 **IMPORTANT: Always STOP your JupyterLab space when not actively working and DELETE it after completing the lab to avoid unnecessary charges.**
+
 **CAUTION:** After stopping and restarting the space, SageMaker may default to the **latest image version (e.g. 3.0.0)**. Be sure to manually switch the image back to **SageMaker Distribution 2.4.2** before continuing. This ensures compatibility with the lab steps.
 
 ### 1.2.4 Upload Required Files
