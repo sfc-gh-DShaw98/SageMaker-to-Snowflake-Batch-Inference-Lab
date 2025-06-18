@@ -46,7 +46,7 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
   - NewTrainingData.csv (for model retraining)
     
 **Configuration Files:**
-  - connections.toml (Snowflake connection config)
+  - [connections.toml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/connections.toml) (Snowflake connection config)
   - rsa_private_key.pem (for secure authentication)
   - College-of-AI-MLOPsExerciseNotebook.ipynb (SageMaker notebook)
   - MLOPs Snowflake ML Observability In Action Exercise.ipynb (Snowflake notebook)
