@@ -72,4 +72,4 @@ Once you've completed the notebook:
 6. Confirm the deletion when prompted
 
 ## Next Steps
-After completing this phase, proceed to [**Phase 2: Model Monitoring with Snowflake ML Observability**]() to set up monitoring for your registered model.
+After completing this phase, proceed to [**Phase 2: Model Monitoring with Snowflake ML Observability**](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/phase2_mlobservability.md) to set up monitoring for your registered model.
