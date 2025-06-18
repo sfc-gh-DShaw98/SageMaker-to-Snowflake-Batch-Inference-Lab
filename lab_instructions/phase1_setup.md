@@ -7,8 +7,7 @@ This guide walks you through setting up your Snowflake environment and accessing
 2. Click on **Projects** and then **Worksheets** in the left navigation panel
 3. Click **+** to create a new worksheet
 4. Set your role to `ACCOUNTADMIN` using the dropdown in the top right
-
-Execute the following SQL commands to set up your lab environment:
+5. Execute the following SQL commands to set up your lab environment:
 
 ```sql
 -- Use elevated privileges
@@ -208,7 +207,7 @@ This guide walks you through using a pre-provisioned for you in the [AWS SE-Sand
 ### 1.2.5 Configure Snowflake Connection
 1. Open the [connections.toml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/connections.toml) file in JupyterLab
 2. Update the file with your Snowflake connection details:
-```
+```toml
 [connections.snowflake]
 account = "your_account_identifier"
 user = "mlops_user"
@@ -220,7 +219,7 @@ private_key_path = "rsa_private_key.pem"
 ```
 3. Save the file
 
-## 1.2.6 Next Steps
+### 1.2.6 Next Steps
 Now that your Snowflake environment is set up and you have access to SageMaker, you're ready to proceed with [Phase 1: Model Development in SageMaker]().
 
 ## Troubleshooting
