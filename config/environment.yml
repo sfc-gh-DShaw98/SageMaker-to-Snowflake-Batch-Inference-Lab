@@ -1,0 +1,7 @@
+name: snowflake_ml_env
+channels:
+  - snowflake
+dependencies:
+  - snowflake-ml-python=*
+  - matplotlib=*
+  - seaborn=*
