@@ -72,4 +72,4 @@ The notebook includes a DORA evaluation step that must be completed:
 A ✅ checkmark will appear when the evaluation completes successfully.
 
 ## Next Steps
-After completing this phase, proceed to [**Phase 3: End-to-End Model Retraining in Snowflake ML**]() to learn how to retrain your model when performance degrades.
+After completing this phase, proceed to [**Phase 3: End-to-End Model Retraining in Snowflake ML**](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/phase3_end2end_retraining.md) to learn how to retrain your model when performance degrades.
