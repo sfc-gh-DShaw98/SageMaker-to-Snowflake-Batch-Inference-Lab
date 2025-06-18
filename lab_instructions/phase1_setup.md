@@ -29,7 +29,7 @@ GRANT ROLE aicollege TO USER <your_standard_user>;
 -- Create database and warehouse
 CREATE DATABASE IF NOT EXISTS aicollege;
 
-CREATE OR REPLACE WAREHOUSE aicollege
+CREATE WAREHOUSE IF NOT EXISTS aicollege
   WITH WAREHOUSE_SIZE = 'XSMALL'
   AUTO_SUSPEND = 300;
 
@@ -42,7 +42,7 @@ GRANT SELECT ON FUTURE TABLES IN SCHEMA aicollege.public TO ROLE aicollege;
 GRANT SELECT ON FUTURE VIEWS IN SCHEMA aicollege.public TO ROLE aicollege;
 
 -- Create a staging area for uploads
-CREATE OR REPLACE STAGE aicollege.public.setup;
+CREATE STAGE IF NOT EXISTS aicollege.public.setup;
 GRANT READ ON STAGE aicollege.public.setup TO ROLE aicollege;
 ```
 ### 1.1.1 Recommended Code: Set Default Role to AICOLLEGE
