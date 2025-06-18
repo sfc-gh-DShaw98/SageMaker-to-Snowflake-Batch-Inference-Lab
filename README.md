@@ -42,15 +42,15 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 
 **Required Files**
 - **Data Files:**
-  - Mortgage_Data.csv (for initial model training)
-  - NewTrainingData.csv (for model retraining)
+  - [Mortgage_Data.csv](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/data/Mortgage_Data.csv) (for initial model training)
+  - [NewTrainingData.csv](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/data/NewTrainingData.csv) (for model retraining)
     
 **Configuration Files:**
   - [connections.toml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/connections.toml) (Snowflake connection config)
   - rsa_private_key.pem (for secure authentication)
-  - College-of-AI-MLOPsExerciseNotebook.ipynb (SageMaker notebook)
-  - MLOPs Snowflake ML Observability In Action Exercise.ipynb (Snowflake notebook)
-  - MLOPs End-to-End Snowflake ML Retraining Exercise.ipynb (Snowflake notebook)
+  - [College-of-AI-MLOPsExerciseNotebook.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/College-of-AI-MLOPsExerciseNotebook.ipynb) (SageMaker notebook)
+  - [MLOPs Snowflake ML Observability In Action Exercise.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20Exercise.ipynb) (Snowflake notebook)
+  - [MLOPs End-to-End Snowflake ML Retraining Exercise.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/MLOPs%20End-to-End%20Snowflake%20ML%20Retraining%20Exercise.ipynb) (Snowflake notebook)
 
 **Notebook Environments**
 - **Phase 1:** AWS SageMaker JupyterLab with Python 3.8+
@@ -75,4 +75,4 @@ To receive credit for completing this HOL, you must successfully complete all DO
 - [Snowflake Feature Store Documentation](https://docs.snowflake.com/en/developer-guide/snowflake-ml/feature-store/overview)
 - [Snowflake ML Explainability Documentation](https://docs.snowflake.com/en/developer-guide/snowflake-ml/explainability)
 
-Created by: SE Enablement (Diana Shaw) | Last Updated: June 17, 2025
+Created by: SE Enablement (Diana Shaw) | Last Updated: June 18, 2025
