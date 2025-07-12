@@ -30,7 +30,7 @@ By the end of this lab, you will:
    - **Workspace name** – e.g., `college-ai-mlops`
    - **Region** – select your preferred region
    - Leave networking/encryption defaults for this lab
-4. **Review + Create** → **Create** (deployment takes ~2-3 minutes)
+4. Review + Create → **Create** (deployment takes ~2-3 minutes)
 5. When deployment completes, click **Go to resource**
 6. Click **Launch studio** to open Azure ML Studio
 
@@ -70,7 +70,7 @@ USE ROLE ACCOUNTADMIN;
 -- Create a dedicated role, service user, database, and warehouse
 CREATE OR REPLACE ROLE aicollege;
 
-CREATE OR REPLACE USER mlops_userTYPE = SERVICE
+CREATE OR REPLACE USER mlops_user TYPE = SERVICE
   DEFAULT_ROLE = aicollege
   COMMENT = 'Service user for MLOps HOL';
 
@@ -95,8 +95,10 @@ GRANT SELECT ON FUTURE VIEWS IN SCHEMA aicollege.public TO ROLE aicollege;
 -- Create a staging area for uploads
 CREATE STAGE IF NOT EXISTS aicollege.public.setup;
 GRANT READ ON STAGE aicollege.public.setup TO ROLE aicollege;
+```
 
 ### Step 2: Azure ML-Specific Permissions (Required for all users)
+```sql
 -- Additional permissions needed for Azure ML integration
 USE ROLE ACCOUNTADMIN;
 
@@ -127,17 +129,19 @@ ALTER USER mlops_user SET RSA_PUBLIC_KEY='-----BEGIN PUBLIC KEY-----<your_public
 -----END PUBLIC KEY-----';
 ```
 
-### Step 4: Configure Network Access for Azure ML
-⚠️ Important: This step is Azure ML-specific and must be completed even if you did Phase 1 Setup.
-1. Get your Azure ML compute instance IP (you'lldo this in the notebook):
-```python
-!curl ifconfig.me
-```
-2. Create/Update network policy with your Azure ML IP:
+### Step 4: Network Policy Setup (Completed During Azure ML Notebook Execution)
+⚠️ **Important:** This step will be completed DURING notebook execution, not before. The notebook will guide you through getting your IP address and updating the network policy.
+
+**What will happen in the notebook:**
+1. The notebook will show you how to get your Azure ML compute instance IP
+2. You'll then return to Snowsight to update the network policy with that IP
+3. The notebook will test the connection to confirm it works
+
+**SQL commands you'll use (save these for reference):**
 ```sql
--- Create network policy for Azure ML (replace with your actual IP)
+-- You'll run these commands in Snowsight when prompted by the notebook
 CREATE OR REPLACE NETWORK POLICY ALLOW_AZUREML
-  ALLOWED_IP_LIST = ('<your_azure_ml_ip>')
+  ALLOWED_IP_LIST = ('<your_azure_ml_ip_from_notebook>')
   COMMENT = 'Restrict access to Azure ML IPs for MLOps HOL';
 
 -- Assign to service user
@@ -146,6 +150,7 @@ ALTER USER mlops_user SET NETWORK_POLICY = ALLOW_AZUREML;
 -- Verify configuration
 DESC USER mlops_user;
 ```
+📝 **Note:** Don't run these SQL commands now - wait for the notebook to guide you through the process.
 
 ### Step 5: Create Inference Data Table (Skip if Phase 1 Setup completed)
 ```sql
@@ -169,8 +174,8 @@ CREATE TABLE IF NOT EXISTS InferenceMortgageData (WEEK_START_DATE TIMESTAMP_NTZ,
 );
 
 -- Define file format for CSV import
-CREATE OR REPLACE FILE FORMAT aicollege.public.mlopsTYPE = CSV
-    SKIP_HEADER =1
+CREATE OR REPLACE FILE FORMAT aicollege.public.mlops TYPE = CSV
+    SKIP_HEADER = 1
     FIELD_DELIMITER = ','
     TRIM_SPACE = TRUE
     FIELD_OPTIONALLY_ENCLOSED_BY = '"'
@@ -197,7 +202,162 @@ USE ROLE ACCOUNTADMIN;
 -- GRANT OWNERSHIP ON TAG aicollege.public.PROJECT TO ROLE aicollege;
 ```
 
-### Step 7: Use this notebook in Azure ML
+---
 
+## Part 3: Execute the ML Pipeline
 
+### 📓 **Main Notebook: [Azure ML Model to Snowflake Model Registry.ipynb](./notebooks/Azure_ML%20Model%20to%20Snowflake%20Model%20Registry.ipynb)**
 
+This comprehensive notebook demonstrates the complete MLOps workflow from Azure ML training to Snowflake Model Registry deployment.
+
+#### 🔧 **What This Notebook Accomplishes:**
+
+**Model Development & Training:**
+- Data preprocessing with pandas (one-hot encoding, feature alignment)
+- XGBoost classifier training with proper train/validation/holdout splits
+- Model evaluation with comprehensive metrics (accuracy, precision, recall, F1)
+- Azure ML experiment tracking and logging
+
+**Azure-Snowflake Integration:**
+- Secure connection setup using TOML configuration and JWT authentication
+- Network policy configuration and IP allowlisting
+- Error handling and connection validation
+
+**Model Registry & Governance:**
+- Model registration in Snowflake Model Registry with metadata
+- Governance tagging for model lifecycle management
+- Version control and model lineage tracking
+
+**Batch Inference Pipeline:**
+- Feature preprocessing pipeline for inference data alignment
+- Batch scoring on Snowflake data with multiple approaches
+- Results storage with ground truth for model monitoring
+
+---
+
+### Step 1: Upload and Configure the Notebook
+
+1. **Download the notebook** from the repository
+2. **In Azure ML Studio**, navigate to **Notebooks**
+3. **Upload the notebook file** using the upload button
+4. **Create your configuration files:****
+   - Create `connections.toml`:**
+      ```toml
+      [connections.Snowpark_MLOps_HOL]
+      account = "your_account_identifier"
+      user = "mlops_user"
+      role = "aicollege"
+      warehouse = "aicollege"
+      database = "aicollege"
+      schema = "public"
+      authenticator = "snowflake_jwt"
+      ```
+6. **Upload your rsa_private_key.pem file** (generated in Step 3)
+
+### Step 2: Execute the Notebook
+1. **Open the notebook** in Azure ML Studio
+2. **Select kernel:** Choose **Python 3.10- AzureML**
+3. **Execute cells sequentially,** following these key phases:
+   - **Environment Setup (Cells 1-3)**
+      - Install required packages
+      - Import libraries
+      - Connect to Azure ML workspace
+   - **Data Preparation (Cells 4-7)**
+      - Load mortgage lending dataset
+      - Perform feature engineering and preprocessing
+      - Create train/validation/test splits
+   - **Model Training (Cells 8-9)**
+      - Train XGBoost classifier
+      - Log metrics to Azure ML
+      - Evaluate model performance
+   - **Snowflake Integration (Cells 10-11)**
+      - Establish secure connection to Snowflake
+      - Test connection and permissions
+   - **Model Registration (Cells 12-14)**
+      - Register model in Snowflake Model Registry
+      - Apply governance tags
+      - Validate registration
+   - **Batch Inference (Cells 15-17)**
+      - Preprocess inference data
+      - Run batch scoring
+      - Store results for monitoring
+
+---
+
+### Step 3: Validate Your Results
+After completing the notebook execution, verify your setup worked correctly:
+
+1. **Check model registration in Snowflake:**
+```sql
+USE ROLE aicollege;
+SHOW MODELS IN SCHEMA aicollege.public;
+```
+2. **Verify inference results:**
+```sql
+SELECT * FROM aicollege.public.ALL_PREDICTIONS_WITH_GROUND_TRUTH LIMIT 10;
+```
+3. Confirm model tags:
+```sql
+SELECT * FROM TABLE(aicollege.information_schema.tag_references('aicollege.public.azureml_xgb_model', 'model'));
+```
+
+---
+### Step 4: Expected Outcomes
+Upon successful completion, you should have:
+
+✅ A trained XGBoost model registered in Snowflake Model Registry
+✅ Batch inference pipeline processing mortgage application data
+✅ Model governance tags applied for lifecycle management
+✅ Comprehensive metrics logged in both Azure ML and Snowflake
+✅ Understanding of scaling options for production deployment
+
+---
+## Troubleshooting
+
+### Common Issues and Solutions
+
+**Azure ML Issues:**
+- **Compute instance won't start**: Try a different VM size or refresh the page
+- **Kernel disconnections**: Restart the kernel from the notebook toolbar
+- **Package installation failures**: Ensure you're using the correct Python 3.10 kernel
+
+**Snowflake Connection Issues:**
+- **Authentication failures**: Verify RSA key pair matches and is correctly formatted
+- **Network policy errors**: Confirm your Azure ML IP is added to the ALLOW_AZUREML policy
+- **Permission denied**: Ensure all grants in Step 2 were executed as ACCOUNTADMIN
+
+**Model Registry Issues:**
+- **Tag creation errors**: Run the tag ownership grants from Step 6
+- **Model registration failures**: Check that CREATE MODEL privilege is granted
+- **Inference errors**: Verify feature schema alignment between training and inference data
+
+### Getting Help
+If you encounter issues not covered here:
+1. Check the notebook's error messages for specific guidance
+2. Verify all prerequisite steps were completed
+3. Ensure your Snowflake and Azure ML environments have proper permissions
+
+---
+## Next Steps
+
+### 🎯 **Recommended: Continue to Phase 2**
+**[Phase 2: Model Monitoring with Snowflake ML Observability](./phase2_ml_observability.md)**
+
+Now that you have a trained model registered in Snowflake and performing batch inference, the next critical step is monitoring its performance over time. Phase 2 will teach you to:
+
+- ✅ **Set up ML Observability** to track model performance and detect drift
+- ✅ **Create baseline metrics** from your initial inference results
+- ✅ **Configure automated alerts** when model performance degrades (F1-score< 0.7)
+- ✅ **Visualize performance trends** using Snowflake's native monitoring capabilities
+- ✅ **Identify when retraining is needed** based on drift detection
+
+This phase uses the prediction results you generated in this lab as the foundation for ongoing model monitoring.
+
+---
+
+### 🚀 **Additional Scaling & Production Options**
+
+After completing Phase 2, explore these advanced deployment patterns:
+
+- **[ML Jobs](https://docs.snowflake.com/en/developer-guide/snowpark-ml/snowpark-ml-mlops)** - Automate your batch inference pipeline with scheduled jobs
+- **[Snowpark Container Services](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview)** - Deploy real-time inference endpoints for high-scale applications  
