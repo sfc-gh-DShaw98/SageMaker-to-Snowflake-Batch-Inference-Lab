@@ -6,9 +6,10 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 
 ## Lab Workflow
 - **Phase 1: [Model Development & SageMaker Integration](lab_instructions/phase1_setup.md)**
-  - Train and evaluate an XGBoost model in SageMaker
-  - Log the model into [Snowflake Model Registry](https://docs.snowflake.com/en/developer-guide/snowflake-ml/model-registry/overview) 
-  - Perform batch-scoring on historical mortgage data stored in Snowflake (Weeks 1–5)
+  - Train an XGBoost classifier on the mortgage data, then register it in Snowflake’s Model Registry. You can do this in whichever environment you prefer:  
+    - **AWS SageMaker** (built-in estimator → `log_model()`),  
+    - **Azure ML** (train with the v1 SDK, serialize via `joblib.dump()`, then `Registry.log_model()`).  
+  - Once registered, perform batch-scoring on historical mortgage data in Snowflake.  
 
 - **Phase 2: [Model Monitoring with Snowflake ML Observability](lab_instructions/phase2_observability.md)**
   - Configure [Snowflake ML Observability](https://docs.snowflake.com/en/developer-guide/snowflake-ml/model-registry/model-observability) to baseline, monitor performance, and detect drift
@@ -39,6 +40,12 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 - JupyterLab space with SageMaker Distribution 2.4.2
 - **Important:** Always STOP your JupyterLab space when not actively working and DELETE it after completing the lab
 - [See detailed setup instructions](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/phase1_setup.md)
+
+**Optional: Azure Machine Learning**  
+- Azure ML workspace with a Compute Instance  
+- Python 3.10 – AzureML kernel  
+- Azure ML SDK v1 installed in your kernel  
+- [See detailed setup instructions](notebooks/Azure_ML%20Model%20to%20Snowflake%20Model%20Registry.ipynb)
   
 **Required Files**
 - **Data Files:**
@@ -54,7 +61,9 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
   - [MLOPs End-to-End Snowflake ML Retraining Exercise.ipynb](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/MLOPs%20End-to-End%20Snowflake%20ML%20Retraining%20Exercise.ipynb) (Snowflake notebook)
 
 **Notebook Environments**
-- **Phase 1:** AWS SageMaker JupyterLab with Python 3.8+
+- **Phase 1:**
+  - AWS SageMaker JupyterLab with Python 3.8+ **or**  
+  - Azure ML Compute Instance with Python 3.10 – AzureML kernel
 - **Phase 2:** Snowflake Notebooks with Warehouse Runtime
 - **Phase 3:** Snowflake Notebooks with Container Runtime (Snowflake ML Runtime CPU 1.0)
 
