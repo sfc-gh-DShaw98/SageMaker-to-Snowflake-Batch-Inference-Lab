@@ -340,18 +340,21 @@ If you encounter issues not covered here:
 ---
 ## Next Steps
 
-### 🎯 **Recommended: Continue to Phase 2**
-**[Phase 2: Model Monitoring with Snowflake ML Observability](./phase2_ml_observability.md)**
+### 🎯 Phase 2: Model Monitoring with Snowflake ML Observability
+Now that you’ve batch-scored your Azure ML model and stored results in `PREDICTIONS_WITH_GROUND_TRUTH`, Phase 2 focuses on keeping it healthy in production:
 
-Now that you have a trained model registered in Snowflake and performing batch inference, the next critical step is monitoring its performance over time. Phase 2 will teach you to:
+- Instrument a **Model Monitor** for your registered Azure ML XGBoost model  
+- Generate and persist **baseline metrics** from your initial batch results  
+- Set up **automated alerts** (e.g. F1-score falls below 0.7)  
+- Visualize performance trends, drift, and data quality issues natively in Snowflake  
+- Define **retraining triggers** based on drift detection and alert thresholds
 
-- ✅ **Set up ML Observability** to track model performance and detect drift
-- ✅ **Create baseline metrics** from your initial inference results
-- ✅ **Configure automated alerts** when model performance degrades (F1-score< 0.7)
-- ✅ **Visualize performance trends** using Snowflake's native monitoring capabilities
-- ✅ **Identify when retraining is needed** based on drift detection
+This phase builds directly on your `PREDICTIONS_WITH_GROUND_TRUTH` table to ensure your model stays accurate in production.
 
-This phase uses the prediction results you generated in this lab as the foundation for ongoing model monitoring.
+➡️ Continue to [Phase 2: Model Monitoring with Snowflake ML Observability](./phase2_ml_observability.md)
+
+**Notebook (Azure ML):**  
+[MLOps Snowflake ML Observability for Azure ML Model](notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20for%20Azure%20ML%20Model.ipynb)
 
 ---
 
