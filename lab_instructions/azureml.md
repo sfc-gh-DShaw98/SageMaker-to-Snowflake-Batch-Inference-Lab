@@ -206,7 +206,7 @@ USE ROLE ACCOUNTADMIN;
 
 ## Part 3: Execute the ML Pipeline
 
-### 📓 **Main Notebook: [Azure ML Model to Snowflake Model Registry.ipynb](notebooks/Azure_ML Model to Snowflake Model Registry.ipynb)**
+### 📓 **Main Notebook: [Azure ML Model to Snowflake Model Registry](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/Azure_ML%20Model%20to%20Snowflake%20Model%20Registry.ipynb)**
 
 This comprehensive notebook demonstrates the complete MLOps workflow from Azure ML training to Snowflake Model Registry deployment.
 
