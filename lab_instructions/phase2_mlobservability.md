@@ -9,6 +9,7 @@ This guide walks you through setting up [Snowflake ML Observability](https://doc
 4. Select the **v** beside the **+ Notebook** button
 5. Select **Import .ipynb** file option
 6. Import the [MLOPs Snowflake ML Observability In Action Exercise](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20Exercise.ipynb) notebook
+   - For the **Azure ML trained model**, use this notebook: [MLOps Snowflake ML Observability In Action for Azure ML Model](/notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20for%20Azure%20ML%20Model.ipynb)
 7. Select **AICOLLEGE** and **PUBLIC** for Notebook location
 8. Select **Run on warehouse** for Runtime
 9. Select **Create**
