@@ -206,7 +206,7 @@ USE ROLE ACCOUNTADMIN;
 
 ## Part 3: Execute the ML Pipeline
 
-### 📓 **Main Notebook: [Azure ML Model to Snowflake Model Registry.ipynb](./notebooks/Azure_ML%20Model%20to%20Snowflake%20Model%20Registry.ipynb)**
+### 📓 **Main Notebook: [Azure ML Model to Snowflake Model Registry.ipynb](notebooks/Azure_ML Model to Snowflake Model Registry.ipynb)**
 
 This comprehensive notebook demonstrates the complete MLOps workflow from Azure ML training to Snowflake Model Registry deployment.
 
