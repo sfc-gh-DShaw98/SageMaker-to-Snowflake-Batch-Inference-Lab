@@ -223,10 +223,10 @@ private_key_path = "rsa_private_key.pem"
 With your Snowflake environment ready, choose your preferred Phase 1 workflow:
 
 - **AWS SageMaker**  
-  Continue here → [**Phase 1: Model Development in SageMaker - Initial Model Registration**](lab_instructions/phase1_model_dev.md)
+  Continue here → [Phase 1: Model Development in SageMaker - Initial Model Registration](/lab_instructions/phase1_model_dev.md)
 
 - **Azure Machine Learning**  
-  Jump to → [**Mortgage Lending Demo in Azure ML**](notebooks/Azure_ML%20Model%20to%20Snowflake%20Model%20Registry.ipynb)
+  Jump to → [Mortgage Lending Demo in Azure ML](/lab_instructions/azureml.md)
 
 Both paths train, evaluate, and register the same XGBoost model in Snowflake—pick the one that fits your toolkit.  
 
