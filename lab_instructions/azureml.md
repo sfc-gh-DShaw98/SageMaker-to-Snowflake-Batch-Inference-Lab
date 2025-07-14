@@ -351,10 +351,10 @@ Now that you’ve batch-scored your Azure ML model and stored results in `PREDIC
 
 This phase builds directly on your `PREDICTIONS_WITH_GROUND_TRUTH` table to ensure your model stays accurate in production.
 
-➡️ Continue to [Phase 2: Model Monitoring with Snowflake ML Observability](./phase2_ml_observability.md)
+➡️ Continue to [Phase 2: Model Monitoring with Snowflake ML Observability](/lab_instructions/phase2_mlobservability.md)
 
 **Notebook (Azure ML):**  
-[MLOps Snowflake ML Observability for Azure ML Model](notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20for%20Azure%20ML%20Model.ipynb)
+[MLOps Snowflake ML Observability for Azure ML Model](/notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20for%20Azure%20ML%20Model.ipynb)
 
 ---
 
