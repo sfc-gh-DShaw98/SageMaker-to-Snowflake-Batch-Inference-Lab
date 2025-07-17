@@ -74,3 +74,19 @@ A ✅ checkmark will appear when the evaluation completes successfully.
 
 ## Next Steps
 After completing this phase, proceed to [**Phase 3: End-to-End Model Retraining in Snowflake ML**](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/phase3_end2end_retraining.md) to learn how to retrain your model when performance degrades.
+
+**Phase 3 overview**
+1. **Refresh** the training dataset (e.g., NEWTRAININGDATA) inside Snowflake.
+2. **Build Feature Store** entities and views so the model trains on production-grade features.
+3. **Retrain** a new XGBoost classifier with Snowflake ML.
+4. **Register** the candidate as a new model version (e.g., V2) in the Model Registry.
+5. **Evaluate & explain** the XGBoost model with Snowflake ML Explainability.
+6. **Promote via alias** — point the `PRODUCTION` alias to the new version.
+7. **Update the batch-scoring pipeline to call the alias**, keeping inference code version-agnostic.
+
+Once you finish Phase 3 you’ll have a complete MLOps loop—**train → monitor → retrain**—running entirely inside Snowflake.
+
+**Phase 3 notebooks:**
+- Default path: [MLOPs End-to-End Snowflake ML Retraining Exercise.ipynb](/notebooks/MLOPs%20End-to-End%20Snowflake%20ML%20Retraining%20Exercise.ipynb)
+- Azure ML variant (only if you trained in Azure): [MLOPs End-to-End Snowflake ML Retraining Solution for Azure ML model.ipynb](/notebooks/MLOPs%20Snowflake%20ML%20Observability%20In%20Action%20for%20Azure%20ML%20Model.ipynb)
+
