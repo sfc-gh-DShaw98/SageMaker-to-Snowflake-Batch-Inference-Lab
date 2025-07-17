@@ -38,17 +38,18 @@ ON_ERROR = CONTINUE;
 2. Navigate to **Projects** and then **Notebooks**
 3. Select the **v** beside the **+ Notebook** button
 4. Select **Import .ipynb** file option
-5. Import the [MLOPs End-to-End Snowflake ML Retraining Exercise](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/notebooks/MLOPs%20End-to-End%20Snowflake%20ML%20Retraining%20Exercise.ipynb) notebook
+5. Import the [MLOPs End-to-End Snowflake ML Retraining Exercise](/notebooks/MLOPs%20End-to-End%20Snowflake%20ML%20Retraining%20Exercise.ipynb) notebook
+   - For the Azure ML trained model, use this notebook: [MLOPs End-to-End Snowflake ML Retraining Solution for Azure ML model](/notebooks/MLOPs%20End-to-End%20Snowflake%20ML%20Retraining%20Solution%20for%20Azure%20ML%20model.ipynb) notebook
 6. Select **AICOLLEGE** and **PUBLIC** for Notebook location
 7. Select **Run on container** for Runtime
 8. Select **Snowflake ML Runtime CPU 1.0** for runtime
-9. Select **SYSTEM_COMPUTE_POOL_CPU** for compute pool
-10. Select **AICOLLEGE** for Query warehouse
-11. Select **Create**
-12. In the left sidebar of your Snowflake Notebook (where the notebook title is shown), click the **+** icon.
-13. Upload the [environment.yml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/environment.yml) file
-14. After uploading, click **Start** to apply the environment.
-15. Snowflake will build the runtime with your specified packages *(this may take a few minutes on first use)*.
+10. Select **SYSTEM_COMPUTE_POOL_CPU** for compute pool
+11. Select **AICOLLEGE** for Query warehouse
+12. Select **Create**
+13. In the left sidebar of your Snowflake Notebook (where the notebook title is shown), click the **+** icon.
+14. Upload the [environment.yml](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/config/environment.yml) file
+15. After uploading, click **Start** to apply the environment.
+16. Snowflake will build the runtime with your specified packages *(this may take a few minutes on first use)*.
 
 ## 3.3 Customize the Notebook
 Throughout the notebook, you'll find several placeholders marked `XXX` that need to be replaced:
@@ -147,8 +148,8 @@ A ✅ checkmark will appear when each evaluation completes successfully.
 ## Next Steps
 Congratulations! You've completed all three phases of the lab:
 
-1. Trained a model in SageMaker and registered it in Snowflake
-2. Set up ML Observability to monitor model performance
-3. Retrained the model natively in Snowflake and promoted it to production
+1. Trained a model in **SageMaker**  *or* **Azure ML** and registered it in Snowflake
+2. Set up **ML Observability** to monitor model performance
+3. Retrained the model natively in **Snowflake ML** and promoted it to production
 
 You now have a complete MLOps workflow that spans model development, monitoring, and retraining—all within Snowflake.
