@@ -7,8 +7,9 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 ## Lab Workflow
 - **Phase 1: [Model Development & SageMaker Integration](lab_instructions/phase1_setup.md)**
   - Train an XGBoost classifier on the mortgage data, then register it in Snowflake’s Model Registry. You can do this in whichever environment you prefer:  
-    - **AWS SageMaker** (built-in estimator → `log_model()`),  
-    - **Azure ML** (train with the v1 SDK, serialize via `joblib.dump()`, then `Registry.log_model()`).  
+    - **AWS SageMaker** - built-in estimator → `log_model()`,  
+    - **Azure ML** - train with the v1 SDK, serialize via `joblib.dump()`, then `Registry.log_model()`.
+    - **Vertex AI** - train XGBoost in Vertex AI Workbench, register in Snowflake, batch-score. 
   - Once registered, perform batch-scoring on historical mortgage data in Snowflake.  
 
 - **Phase 2: [Model Monitoring with Snowflake ML Observability](lab_instructions/phase2_observability.md)**
@@ -46,6 +47,11 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 - Python 3.10 – AzureML kernel  
 - Azure ML SDK v1 installed in your kernel  
 - [See detailed setup instructions](notebooks/Azure_ML%20Model%20to%20Snowflake%20Model%20Registry.ipynb)
+
+**Optional: Vertex AI**
+- Vertex AI Workbench instance (Python 3 kernel) in the same GCP project  
+- Vertex AI and Cloud Storage APIs enabled  
+- [See detailed setup instructions](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/vertexai.md) 
   
 **Required Files**
 - **Data Files:**
@@ -63,7 +69,8 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
 **Notebook Environments**
 - **Phase 1:**
   - AWS SageMaker JupyterLab with Python 3.8+ **or**  
-  - Azure ML Compute Instance with Python 3.10 – AzureML kernel
+  - Azure ML Compute Instance with Python 3.10 – AzureML kernel **or**
+  - Vertex AI Workbench (Python 3 kernel)
 - **Phase 2:** Snowflake Notebooks with Warehouse Runtime
 - **Phase 3:** Snowflake Notebooks with Container Runtime (Snowflake ML Runtime CPU 1.0)
 
