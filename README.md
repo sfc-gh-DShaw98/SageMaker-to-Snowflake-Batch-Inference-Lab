@@ -38,7 +38,7 @@ In this hands-on lab, you'll take an XGBoost model trained in SageMaker and brin
     
 **AWS SageMaker:**
 - Access to SE-Sandbox or equivalent environment
-- JupyterLab space with SageMaker Distribution 2.4.2
+- JupyterLab space with SageMaker Distribution 3.3.1
 - **Important:** Always STOP your JupyterLab space when not actively working and DELETE it after completing the lab
 - [See detailed setup instructions](https://github.com/sfc-gh-DShaw98/SageMaker-to-Snowflake-Batch-Inference-Lab/blob/main/lab_instructions/phase1_setup.md)
 
